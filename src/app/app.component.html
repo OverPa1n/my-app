@@ -1,0 +1,54 @@
+<h1 class="bg-primary">Welcome</h1>
+
+<div class="bg-success" *ngIf="success_msg; then updated_msg; else error_msg">
+</div>
+
+<ng-template class="bg-danger" #error_msg>
+  user was not added
+</ng-template>
+
+<ng-template class="bg-danger" #updated_msg>
+  user was updated
+</ng-template>
+
+<h2>Learning *ngFor</h2>
+
+<ul>
+  <li *ngFor="let contact of contacts; index as i; first as f; last as l">
+    <div *ngIf="f" class="bg-primary">this is first record</div>
+    <div>
+      {{ i }} {{ contact.firstName}} {{contact.lastName}}
+    </div>
+    <div *ngIf="l" class="bg-danger">this is last record</div>
+  </li>
+</ul>
+
+<p>new table with even and odd</p>
+
+<ul>
+  <li *ngFor="let contact of contacts; index as i; even as e; odd as o">
+    <div *ngIf="e" style="background-color: antiquewhite">
+      {{ i }} {{ contact.firstName}} {{contact.lastName}}
+    </div>
+    <div *ngIf="o" class="bg-primary">
+      {{ i }} {{ contact.firstName}} {{contact.lastName}}
+    </div>
+  </li>
+</ul>
+
+<p>names</p>
+<ul>
+  <li *ngFor="let name of names; index as i">
+    {{i}} {{name}}
+  </li>
+</ul>
+
+<p>Objects</p>
+
+
+
+
+
+<app-list-profile></app-list-profile>
+
+<router-outlet></router-outlet>
