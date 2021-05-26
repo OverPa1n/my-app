@@ -112,13 +112,12 @@
       ]
     },
     "whitespace": {
+
       "options": [
         "check-branch",
         "check-decl",
         "check-operator",
-        "check-separator",
-        "check-type",
-        "check-typecast"
+        "check-separator"
       ]
     },
     "component-class-suffix": true,
@@ -148,5 +147,6 @@
       "app",
       "kebab-case"
     ]
-  }
+  },
+  "no-trailing-whitespace": [true, { "skipBlankLines": true }]
 }

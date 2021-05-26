@@ -1,54 +1,198 @@
-<h1 class="bg-primary">Welcome</h1>
+<h1 class="c1">Welcome</h1>
 
-<div class="bg-success" *ngIf="success_msg; then updated_msg; else error_msg">
-</div>
+<!--<div>{{ pageHeading }}</div>-->
 
-<ng-template class="bg-danger" #error_msg>
-  user was not added
-</ng-template>
+<!--&lt;!&ndash;property bindings&ndash;&gt;-->
+<!--<p [style.color]="colorP" >{{pageCount}}</p>-->
 
-<ng-template class="bg-danger" #updated_msg>
-  user was updated
-</ng-template>
+<!--<img [src]="imgUrl"  [alt]="imgAlt">-->
 
-<h2>Learning *ngFor</h2>
+<!--<div *ngIf="isUserLoggedIn">-->
+<!--  <div [innerHTML]="userObject.firstName"></div>-->
+<!--</div>-->
+<!--&lt;!&ndash;property bindings&ndash;&gt;-->
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>Age</th>-->
+<!--    <th>First Name</th>-->
+<!--    <th>Last Name</th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let contact of contacts">-->
+<!--    <td [title]="contact.age">{{contact.age}}</td>-->
+<!--    <td>{{contact.lastName}}</td>-->
+<!--    <td>{{contact.firstName}}</td>-->
+<!--  </tr>-->
 
-<ul>
-  <li *ngFor="let contact of contacts; index as i; first as f; last as l">
-    <div *ngIf="f" class="bg-primary">this is first record</div>
-    <div>
-      {{ i }} {{ contact.firstName}} {{contact.lastName}}
-    </div>
-    <div *ngIf="l" class="bg-danger">this is last record</div>
-  </li>
-</ul>
+<!--</table>-->
 
-<p>new table with even and odd</p>
+<!--<div *ngFor="let contact of contacts">-->
 
-<ul>
-  <li *ngFor="let contact of contacts; index as i; even as e; odd as o">
-    <div *ngIf="e" style="background-color: antiquewhite">
-      {{ i }} {{ contact.firstName}} {{contact.lastName}}
-    </div>
-    <div *ngIf="o" class="bg-primary">
-      {{ i }} {{ contact.firstName}} {{contact.lastName}}
-    </div>
-  </li>
-</ul>
-
-<p>names</p>
-<ul>
-  <li *ngFor="let name of names; index as i">
-    {{i}} {{name}}
-  </li>
-</ul>
-
-<p>Objects</p>
+<!--  <div [ngSwitch]="contact.age">-->
+<!--    <div *ngSwitchCase="30">-->
+<!--      <p>{{contact.firstName}} {{contact.lastName}}</p>-->
+<!--    </div>-->
+<!--    <div *ngSwitchCase="42">-->
+<!--      <p>{{contact.firstName}} {{contact.lastName}}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
+<!--<table style="background-color: bisque">-->
+<!--  <tr>-->
+<!--    <td>Age</td>-->
+<!--    <td>Name</td>-->
+<!--    <td>Last name</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td [attr.colspan]="colVal">Age</td>-->
+<!--    <td>Name</td>-->
+
+<!--  </tr>-->
+<!--</table>-->
+
+
+<!--<button (click)="sayHello()">Click me</button>-->
+
+<!--<div (mouseover)="highlighted(1,2,3)" >mouse over</div>-->
+
+<!--<input type="text" (focus)="inputBox()" >-->
+
+<!--<div>-->
+<!--  <input type="text" (keyup)="showText($event)">-->
+<!--  <p [innerHTML]="textFromInput"></p>-->
+<!--</div>-->
+
+<!--<form action="#" (submit)="userName(name, $event)">-->
+<!--  <input type="text" #name placeholder="Type your name">-->
+<!--  <p>{{userNameFromInput}}</p>-->
+<!--</form>-->
+
+
+<!--&lt;!&ndash;Two-ways binding&ndash;&gt;-->
+
+<!--<input type="text" [(ngModel)]="month" >-->
+
+<!--<div *ngIf="month > 10">{{ username }}</div>-->
+
+
+<!--&lt;!&ndash;Angular Built-in Pipes&ndash;&gt;-->
+<!--<div>{{ lowerCaseExample | lowercase}}</div>-->
+<!--<div>{{ upperCaseExample | uppercase}}</div>-->
+<!--<div>{{ datePipe | date}}</div>-->
+<!--<div>{{ jsonPipe | json}}</div>-->
+<!--<div>{{ currencyPipe | currency}}</div>-->
+<!--<div>{{ percentPipe | percent}}</div>-->
 
 
 
-<app-list-profile></app-list-profile>
+<!--&lt;!&ndash;Parametrize Pipes&ndash;&gt;-->
 
-<router-outlet></router-outlet>
+<!--<div>{{ currencyPipe | currency : 'CAD'  }}</div>-->
+<!--<div>{{ datePipe | date : 'MM-dd-yy'  }}</div>-->
+<!--<div>{{ percentPipe | percent : '3.1-1'}}</div>-->
+
+<!--&lt;!&ndash;Chaining Pipes&ndash;&gt;-->
+
+<!--<h4>Chaining Pipes</h4>-->
+
+<!--<div>{{ datePipe | date | uppercase}}</div>-->
+<!--<div>{{ currencyPipe | currency : 'CAD' | lowercase}}</div>-->
+
+
+
+
+
+
+
+
+
+
+<!----------------------------------------------------------------------------------------------->
+<!--<app-users></app-users>-->
+
+<!--<div class="bg-success" *ngIf="success_msg; then updated_msg; else error_msg">-->
+<!--</div>-->
+
+<!--<ng-template class="bg-danger" #error_msg>-->
+<!--  user was not added-->
+<!--</ng-template>-->
+
+<!--<ng-template class="bg-danger" #updated_msg>-->
+<!--  user was updated-->
+<!--</ng-template>-->
+
+<!--<h2>Learning *ngFor</h2>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let contact of contacts; index as i; first as f; last as l">-->
+<!--    <div *ngIf="f" class="bg-primary">this is first record</div>-->
+<!--    <div>-->
+<!--      {{ i }} {{ contact.firstName}} {{contact.lastName}}-->
+<!--    </div>-->
+<!--    <div *ngIf="l" class="bg-danger">this is last record</div>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<p>new table with even and odd</p>-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let contact of contacts; index as i; even as e; odd as o">-->
+<!--    <div *ngIf="e" style="background-color: antiquewhite">-->
+<!--      {{ i }} {{ contact.firstName}} {{contact.lastName}}-->
+<!--    </div>-->
+<!--    <div *ngIf="o" class="bg-primary">-->
+<!--      {{ i }} {{ contact.firstName}} {{contact.lastName}}-->
+<!--    </div>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<p>names</p>-->
+<!--<ul>-->
+<!--  <li *ngFor="let name of names; index as i">-->
+<!--    {{i}} {{name}}-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<h4>Learning ngSwitch</h4>-->
+
+<!--<div [ngSwitch]="superPower">-->
+<!--  <div *ngSwitchCase="'wonderWoman'">Display wonder WOMAN</div>-->
+<!--  <div *ngSwitchCase="'superMan'">Display super MAN</div>-->
+<!--  <div *ngSwitchCase="'heMan'">Display he MAN</div>-->
+<!--  <div *ngSwitchDefault>Super power is in learning</div>-->
+<!--</div>-->
+
+
+<!--<div [ngSwitch]="tax">-->
+<!--  <div *ngSwitchCase="50">Display tax is 50</div>-->
+<!--  <div *ngSwitchCase="30">Display tax is 30</div>-->
+<!--  <div *ngSwitchDefault>Default tax</div>-->
+<!--</div>-->
+
+<!--<h4>Learning ngStyle</h4>-->
+
+<!--<div [ngStyle]="{'background-color':'green', 'color':'white'}">This is green DIV</div>-->
+
+<!--<div [ngStyle]="{'background-color': styleProp}">This is dynamic property</div>-->
+
+<!--<div [ngStyle]="{'color': txtColor === 'blue'? 'blue': 'green'}">This is conditional DIV</div>-->
+
+
+<!--<h4>Learning ngClass</h4>-->
+
+<!--<div [ngClass]="'c1'"> This is ngClass Example</div>-->
+<!--<div [ngClass]="'c1 c2'"> This is Multiple classes Example</div>-->
+<!--<div [ngClass]="conditionClass === 'c4'? 'c4' : 'c5'"> This is Condition and variable classes Example</div>-->
+
+<!--<p>This is through objects</p>-->
+<!--<div [ngClass]="{c4: true, c5: true}"> This is Objects classes Example</div>-->
+
+<!--<div [ngClass]="getClsName()"> This is Function classes Example</div>-->
+
+
+
+<h1>this is angular application</h1>
+<router-outlet></router-outlet>  <!-- Primary router -->
+<router-outlet name="addLoan"></router-outlet> <!-- name router  -->
+<router-outlet name="editLoan"></router-outlet> <!-- name router  -->
